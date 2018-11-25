@@ -1,8 +1,7 @@
-const express = require('express');
-const app = express();
+const http = require('http');
 
-const index = require('./routes/index.js');
+const app = require('./app');
 
-app.get('/', index);
+const server = http.createServer(app);
 
-app.listen(3000, () => console.log(`Open http://localhost:3000 to see a response.`));
+app.listen(5000, () => console.log(`Open http://localhost:5000 to see a response.`));
